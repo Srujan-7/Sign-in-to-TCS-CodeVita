@@ -5,7 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in to TCS CodeVita</title>
     <style>
+        @media only screen and (max-width: 768px) {
+            .container {
+                max-width: 350px ;
+                margin-left: 30px;
+            }
+            .signin {
+                font-size: 1.2rem;
+            }
+
+            input[type="text"], .submit {
+                height: 35px;
+                width: 280px !important;
+                font-size: 1rem;
+            }
+        }
+        html{
+            height: 100%;
+            margin: 0px;
+        }
         body{
+            height: 100%;
             background-image: none;
             overflow: hidden;
             background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29);
@@ -17,7 +37,9 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         .container{
-            margin: 150px;
+            position: relative;
+            top: 50%;
+            transform: translate(0,-50%);
             z-index: 1;
             border-radius: 20px;
             height: 450px;
@@ -26,6 +48,7 @@
             background-color: white;
             overflow: hidden;
             align-items: center;
+            /* margin-left: 30px; */
         }
         .logo{
             position: relative;
@@ -44,6 +67,20 @@
             padding: 0px 40%;
             font-size: 1.4rem;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .submit{
+            border: none; 
+            background-color: #330080;  
+            height: 30px; 
+            color: white; 
+            margin: 0% 8%; 
+            padding: 5px;
+            transition: 0.03s ease;
+            margin: 20px 0px;
+        }
+        .submit:hover{
+            background-color: #1c0146;
+            cursor: pointer;
         }
         .box li{
             bottom: -150px;
@@ -247,21 +284,6 @@
             animation-delay: 0s;
             animation-duration: 11s;
         }
-        .submit{
-            border: none; 
-            background-color: #330080; 
-            width: 340px; 
-            height: 30px; 
-            color: white; 
-            margin: 0% 8%; 
-            padding: 5px;
-            transition: 0.03s ease;
-            margin: 20px 0px;
-        }
-        .submit:hover{
-            background-color: #1c0146;
-            cursor: pointer;
-        }
 
         @keyframes spin {
             0%{
@@ -274,7 +296,8 @@
                 transform: rotate(720deg);
                 top: -30%;
                 opacity: 0;
-                border-radius: 50%;            }
+                border-radius: 50%;           
+             }
         }
     </style>
 </head>
@@ -289,13 +312,11 @@
         <h1 class="signin">
             Sign in
         </h1>
-        <div style="display: grid; margin: 30px;">
-            <form action="prank.html" style="display: grid;">
-                <label id="Username">Username or email</label>
+            <form action="prank.html" style="display: grid; width: 290px; align-items: center; margin: 30px auto;">
+                <label id="Username" style="width: 200px;">Username or email</label>
                 <input type="text" style="height: 30px;border: none; border-bottom: 1px solid black; padding: 5px;" required>
                 <input type="submit" class="submit" value="submit">
             </form>
-        </div>
     </div> 
    <ul class="box">
     <li></li>
